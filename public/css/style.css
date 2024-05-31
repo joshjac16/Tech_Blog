@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #7f7f7f;
+  color: #111111;
+}
+
+h1{
+    color: #1e0202;
+}
+
+.navbar {
+  background-color: #7f7f7f;
+}
+
+.nav-item {
+  background-color: #55533d;
+  padding: 6px;
+  margin: 10px;
+  border-radius: 25px;
+  /* Box shadow to create depth */
+  box-shadow: inset -6px -4px 10px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link.active {
+  /* color: var(--link) !important; */
+}
+
+header,
+.project:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+.display-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.no-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #1bbc3b;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.no-button:hover {
+  color: #06830a;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+}
+
+.btn {
+  align-self: flex-start; 
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
