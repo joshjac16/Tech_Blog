@@ -1,47 +1,47 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require("sequelize");  // Importing necessary modules from Sequelize
+const sequelize = require("../config/connection");  // Importing the Sequelize instance from the connection configuration
 
-class Comment extends Model { }
+class Comment extends Model { }                     // Creating the Comment model by extending Sequelize's Model class
 
-Comment.init(
+Comment.init(                                       // Initializing the Comment model with attributes and options
   {
-    id: {
+    id: {                                           // Defining the 'id' column
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    commentContent: {
+    commentContent: {                               // Defining the 'commentContent' column
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dateCreated: {
+    dateCreated: {                                  // Defining the 'dateCreated' column
       type: DataTypes.DATEONLY,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    userId: {
+    userId: {                                       // Defining the 'userId' column with a foreign key reference to the 'id' column of the 'user' model
       type: DataTypes.INTEGER,
       references: {
         model: "user",
         key: "id",
       },
     },
-    postId: {
+    postId: {                                      // Defining the 'postId' column with a foreign key reference to the 'id' column of the 'post' model
       type: DataTypes.INTEGER,
       references: {
-        model: "post",
-        key: "id",
+        model: "post",                             // Referencing the 'post' model
+        key: "id",                                 // Referencing the 'id' column of the 'post' model
       },
     },
   },
   {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: "comment",
+    sequelize,                                     // Passing in the sequelize instance
+    timestamps: false,                             // Disabling timestamps (createdAt and updatedAt)
+    freezeTableName: true,                         // Preventing pluralization of the table name
+    underscored: true,                             // Using underscores instead of camelCase for attribute names
+    modelName: "comment",                          // Setting the model name
   }
 );
 
-module.exports = Comment;
+module.exports = Comment;                          // Exporting the Comment model for use in other parts of the application

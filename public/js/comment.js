@@ -1,11 +1,11 @@
-const addComment = async (event) => {
+const addComment = async (event) => {           // Define an asynchronous function to handle the event of adding a comment
     event.preventDefault();
 
 
 
-    const commentContent = document.querySelector("#comment-content").value.trim();
-    const postId = event.target.getAttribute("post-id");
-    const userID = event.target.getAttribute("user-id")
+    const commentContent = document.querySelector("#comment-content").value.trim();  // Get the content of the comment from the input field and remove leading/trailing whitespace
+    const postId = event.target.getAttribute("post-id");   // Get the ID of the post where the comment is being added from the event target
+    const userID = event.target.getAttribute("user-id")     // Get the ID of the user adding the comment from the event target
     console.log(commentContent, postId, userID)
 
 
